@@ -1,0 +1,10 @@
+<mat-menu #matMenuComp #childMenu="matMenu" [overlapTrigger]="false" [hasBackdrop]="false">
+  <span (mouseenter)="mouseenter2.emit()" (mouseleave)="mouseleave2.emit();resetFocus(matMenuComp);">
+    <span *ngFor="let child of items">
+      <!-- Handle branch node menu items -->
+      <button mat-menu-item color="primary">
+        {{child.label}}
+      </button>
+    </span>
+  </span>
+</mat-menu>

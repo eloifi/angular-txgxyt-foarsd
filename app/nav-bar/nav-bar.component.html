@@ -1,0 +1,16 @@
+<div class="basic-container">
+  <span *ngFor="let item of navItems.structure">
+      <button mat-raised-button color="default" [matMenuTriggerFor]="menu.childMenu" 
+      #button #levelOneTrigger="matMenuTrigger"
+      (mouseenter)="buttonEnter(levelOneTrigger)" (mouseleave)="buttonLeave(levelOneTrigger, button)"
+      class="WHYYYYY"
+      >
+        {{ item.label }}
+        <mat-icon>expand_more</mat-icon>
+      </button>
+      <app-sub-menu
+      (mouseenter2)="menuenter()" (mouseleave2)="menuLeave(levelOneTrigger, button)"
+      #menu [items]="item.childs" (click)=menuItemClicked()
+      ></app-sub-menu>
+  </span>
+</div>
